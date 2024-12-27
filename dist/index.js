@@ -18,12 +18,14 @@ function fetchData(Base_Url) {
             }
             const data = yield response.json();
             console.log(data);
-            for (let i = 0; i >= data.length; i++) {
+            for (let i = 0; i < data.length; i++) {
                 const liElement = document.createElement('li');
                 liElement.textContent = data[i].titel;
-                const infoElement = document.createElement('div');
+                const infoElement = document.createElement('li');
                 infoElement.className = 'book-info';
                 infoElement.textContent = 'Författare: ' + `${data[i].författare}`, 'Antal sidor: ' + `${data[i].sidor}`;
+                liElement.appendChild(infoElement);
+                ulElement.appendChild(liElement);
                 liElement.addEventListener('click', function () {
                     infoElement.style.display = 'block';
                 });
