@@ -25,7 +25,7 @@ function fetchData(Base_Url) {
                 infoElement.className = 'book-info';
                 infoElement.textContent = 'Författare: ' + `${data[i].författare}`, 'Antal sidor: ' + `${data[i].sidor}`;
                 liElement.addEventListener('click', function () {
-                    infoElement.style;
+                    infoElement.style.display = 'block';
                 });
             }
         }

@@ -20,7 +20,7 @@ async function fetchData(Base_Url: string): Promise<any> {
             infoElement.textContent = 'Författare: ' + `${data[i].författare}`, 'Antal sidor: ' + `${data[i].sidor}`;
 
             liElement.addEventListener('click', function() {
-                infoElement.style})
+                infoElement.style.display = 'block'})
 
       }
     }catch (error){
