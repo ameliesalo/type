@@ -20,10 +20,10 @@ function fetchData(Base_Url) {
             console.log(data);
             for (let i = 0; i < data.length; i++) {
                 const liElement = document.createElement('li');
-                liElement.textContent = data[i].titel;
-                const infoElement = document.createElement('li');
+                liElement.textContent = data[i].title;
+                const infoElement = document.createElement('div');
                 infoElement.className = 'book-info';
-                infoElement.textContent = 'Författare: ' + `${data[i].författare}`, 'Antal sidor: ' + `${data[i].sidor}`;
+                infoElement.textContent = 'Författare: ' + `${data[i].author}` && 'Antal sidor: ' + `${data[i].pages}`;
                 liElement.appendChild(infoElement);
                 ulElement.appendChild(liElement);
                 liElement.addEventListener('click', function () {
@@ -36,3 +36,4 @@ function fetchData(Base_Url) {
         }
     });
 }
+fetchData(Base_Url);

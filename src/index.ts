@@ -13,11 +13,11 @@ async function fetchData(Base_Url: string): Promise<any> {
 
         for (let i = 0; i < data.length; i++) {
             const liElement = document.createElement('li');
-            liElement.textContent = data[i].titel;
+            liElement.textContent = data[i].title;
 
-            const infoElement = document.createElement('li');
+            const infoElement = document.createElement('div');
             infoElement.className = 'book-info';
-            infoElement.textContent = 'Författare: ' + `${data[i].författare}`, 'Antal sidor: ' + `${data[i].sidor}`;
+            infoElement.textContent = 'Författare: ' + `${data[i].author}` && 'Antal sidor: ' + `${data[i].pages}`;
 
             liElement.appendChild(infoElement);
             ulElement.appendChild(liElement);
@@ -31,3 +31,4 @@ async function fetchData(Base_Url: string): Promise<any> {
     }
   }
 
+fetchData(Base_Url)
