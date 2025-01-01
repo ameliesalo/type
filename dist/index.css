@@ -9,4 +9,5 @@ body{
 
 .book-info{
     display: none;
+    flex-direction: column;
 }

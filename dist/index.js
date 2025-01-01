@@ -23,11 +23,11 @@ function fetchData(Base_Url) {
                 liElement.textContent = data[i].title;
                 const infoElement = document.createElement('div');
                 infoElement.className = 'book-info';
-                infoElement.textContent = 'Författare: ' + `${data[i].author}` && 'Antal sidor: ' + `${data[i].pages}`;
+                infoElement.textContent = `Author: ${data[i].author}` + `, ` + `Pages: ${data[i].pages}` + `, ` + `Plot: ${data[i].plot}`;
                 liElement.appendChild(infoElement);
                 ulElement.appendChild(liElement);
                 liElement.addEventListener('click', function () {
-                    infoElement.style.display = 'block';
+                    infoElement.style.display = 'flex';
                 });
             }
         }
